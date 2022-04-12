@@ -79,9 +79,15 @@ public class MainActivity extends AppCompatActivity {
 //    }
     public  void onBackPressed(){
         if(editMode){
-            findViewById(R.id.editScreen).setVisibility(View.GONE);
-            findViewById(R.id.welcomeScreen).setVisibility(View.VISIBLE);
-            editMode=false;
+            if(nestEdit){
+                findViewById(R.id.nestEdit).setVisibility(View.GONE);
+                findViewById(R.id.edit).setVisibility(View.VISIBLE);
+                nestEdit=false;
+            }else {
+                findViewById(R.id.editScreen).setVisibility(View.GONE);
+                findViewById(R.id.welcomeScreen).setVisibility(View.VISIBLE);
+                editMode = false;
+            }
         }else{
             super.onBackPressed();
         }
@@ -178,9 +184,15 @@ public class MainActivity extends AppCompatActivity {
         final File storageDir= Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES);
         return  new File(storageDir+ imageFileName);
     }
+    private boolean nestEdit=false;
+    public void clickedFilter(View view) {
+        nestEdit=true;
+        findViewById(R.id.edit).setVisibility(View.GONE);
+        findViewById(R.id.nestEdit).setVisibility(View.VISIBLE);
+        findViewById(R.id.filters).setVisibility(View.VISIBLE);
+    }
 
     private boolean editMode=false;
-    private boolean nestEdit=false;
     private Bitmap bitmap;
     private int width=0;
     private int height=0;

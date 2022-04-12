@@ -71,6 +71,7 @@
 
 
         <HorizontalScrollView
+            android:id="@+id/edit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
@@ -81,20 +82,13 @@
 
 
                 <Button
-                    android:id="@+id/blackAndWhite"
+                    android:id="@+id/addFilter"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="5dp"
                     android:layout_weight="1"
-                    android:text="B/W" />
-
-                <Button
-                    android:id="@+id/filter"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="5dp"
-                    android:layout_weight="1"
-                    android:text="Filter" />
+                    android:text="Filter"
+                    android:onClick="clickedFilter"/>
 
                 <Button
                     android:id="@+id/crop"
@@ -137,6 +131,43 @@
                     android:text="Saturation" />
             </LinearLayout>
         </HorizontalScrollView>
+        <LinearLayout
+            android:id="@+id/nestEdit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone">
+        <HorizontalScrollView
+            android:id="@+id/filters"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp">
+                <Button
+                    android:id="@+id/blackAndWhite"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:text="B/W" />
+                <Button
+                    android:id="@+id/red"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:text="Red" />
+                <Button
+                    android:id="@+id/blue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:text="Blue" />
+            </LinearLayout>
+        </HorizontalScrollView>
+        </LinearLayout>
     </LinearLayout>
 
 
