@@ -137,7 +137,7 @@ public class MainActivity extends AppCompatActivity {
 
         final Button saveImageButton = findViewById(R.id.saveImage);
         saveImageButton.setOnClickListener(view -> {
-            final AlertDialog.Builder builder1 = new AlertDialog.Builder(MainActivity.this);
+            final AlertDialog.Builder builder1 = new AlertDialog.Builder(MainActivity.this, R.style.AlertDialogTheme);
             final DialogInterface.OnClickListener dialogClickListener = (dialog, which) -> {
                 if (which == DialogInterface.BUTTON_POSITIVE) {
                     final File outFile = createImageFile();
@@ -180,6 +180,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private boolean editMode=false;
+    private boolean nestEdit=false;
     private Bitmap bitmap;
     private int width=0;
     private int height=0;

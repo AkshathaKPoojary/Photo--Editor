@@ -16,55 +16,127 @@
             android:layout_height="100dp"
             android:gravity="center"
             android:text="Photo Editor"
-            android:textColor="@color/black"
             android:textSize="30sp" />
         <Button
             android:id="@+id/selectImageButton"
             android:layout_marginBottom="20dp"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/ic_select_image"
             android:text="select image"/>
         <Button
             android:id="@+id/takePhotoButton"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/ic_take_picture"
             android:text="take photo"/>
     </LinearLayout>
+
     <LinearLayout
-        android:visibility="gone"
         android:id="@+id/editScreen"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="3dp"
+            >
+            <Button
+                android:id="@+id/back"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:drawableLeft="@drawable/ic_back"
+                android:text="Back"
+                android:layout_marginRight="225dp"/>
+            <Button
+                android:id="@+id/saveImage"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:drawableLeft="@drawable/ic_save"
+                android:text="Save" />
+
+        </LinearLayout>
 
         <ImageView
             android:id="@+id/imageView"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1" />
-        <LinearLayout
+
+
+        <HorizontalScrollView
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:orientation="horizontal">
-            <Button
-                android:id="@+id/back"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="Back"/>
-            <Button
-                android:id="@+id/blackAndWhite"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="Red"/>
-            <Button
-                android:id="@+id/saveImage"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="Save"/>
-        </LinearLayout>
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:orientation="horizontal">
+
+
+                <Button
+                    android:id="@+id/blackAndWhite"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:text="B/W" />
+
+                <Button
+                    android:id="@+id/filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:text="Filter" />
+
+                <Button
+                    android:id="@+id/crop"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:text="Crop" />
+
+                <Button
+                    android:id="@+id/rotate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:text="Rotate" />
+
+                <Button
+                    android:id="@+id/addText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:text="Text" />
+
+                <Button
+                    android:id="@+id/brightness"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:text="Brightness" />
+
+                <Button
+                    android:id="@+id/saturation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:text="Saturation" />
+            </LinearLayout>
+        </HorizontalScrollView>
     </LinearLayout>
 
 
